@@ -1,0 +1,29 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/stale@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: |-
+          This Issue has gone stale and will be closed automatically.
+          
+          If this is incorrect, please reopen and add the label `on hold`.
+          
+          Thank you.
+        stale-pr-message: |-
+          This Pull Request has gone stale and will be closed automatically.
+          
+          If this is incorrect, please reopen and add the label `on hold`.
+          
+          Thank you.
+        stale-issue-label: 'stale'
+        exempt-issue-label: 'on hold'
+        stale-pr-label: 'stale'
+        exempt-pr-label: 'on hold'

@@ -1,0 +1,28 @@
+name: ReviewDog
+on: [pull_request]
+jobs:
+  golangci-lint:
+    name: runner / golangci-lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: reviewdog/action-golangci-lint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+  misspell:
+      name: runner / misspell
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - uses: reviewdog/action-misspell@v1
+          with:
+            github_token: ${{ secrets.GItHUB_TOKEN }}
+  shellcheck:
+      name: runner / shellcheck
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - uses: reviewdog/action-shellcheck@v1
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            reporter: github-pr-review

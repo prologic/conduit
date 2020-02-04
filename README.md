@@ -1,6 +1,14 @@
 # conduit
 
-An implementation of UNIX pipes over HTTP implementing MPMC / PubSub inspired
+![](https://github.com/prologic/conduit/workflows/Coverage/badge.svg)
+![](https://github.com/prologic/conduit/workflows/Docker/badge.svg)
+![](https://github.com/prologic/conduit/workflows/Go/badge.svg)
+![](https://github.com/prologic/conduit/workflows/ReviewDog/badge.svg)
+
+[![Go Report Card](https://goreportcard.com/badge/prologic/conduit)](https://goreportcard.com/report/prologic/conduit)
+[![GitHub license](https://img.shields.io/github/license/prologic/conduit.svg)](https://github.com/prologic/conduit)
+
+`conduit` ia an implementation of UNIX pipes over HTTP implementing MPMC / PubSub inspired
 by [PatchBay](https://patchbay.pub/).
 
 More to come...
